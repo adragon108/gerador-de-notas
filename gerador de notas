@@ -1,0 +1,20 @@
+import random
+
+def gerar_notas(numero_de_alunos, intervalo_de_notas=(0, 100)):
+    # Dicionário para armazenar as notas dos alunos
+    notas = {}
+    
+    for i in range(1, numero_de_alunos + 1):
+        # Gerando uma nota aleatória dentro do intervalo especificado
+        nota = random.randint(intervalo_de_notas[0], intervalo_de_notas[1])
+        notas[f'Aluno {i}'] = nota
+    
+    return notas
+
+# Exemplo: Gerando notas para 10 alunos
+numero_de_alunos = 10
+notas_geradas = gerar_notas(numero_de_alunos)
+
+# Imprimindo as notas geradas
+for aluno, nota in notas_geradas.items():
+    print(f'{aluno}: {nota}')
